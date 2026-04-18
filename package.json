@@ -8,15 +8,16 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "start": "node --experimental-strip-types --env-file=.env src/main.ts"
+    "start": "node --experimental-strip-types --env-file=.env src/main.ts",
+    "push-commands": "node --experimental-strip-types --env-file=.env src/command/deploy.ts"
   },
   "dependencies": {
     "discord.js": "^14.26.3",
-    "express": "^5.2.1"
+    "luxon": "^3.7.2"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "@types/express": "^5.0.6",
+    "@types/luxon": "^3.7.1",
     "@types/node": "^25.6.0",
     "eslint": "^10.2.1",
     "prettier": "^3.8.3",
