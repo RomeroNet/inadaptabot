@@ -4,8 +4,12 @@
   "description": "Bot para Discord del servidor de los inadaptados",
   "repository": "https://github.com/romeronet/inadaptabot",
   "author": "RomeroNet",
+  "type": "module",
   "license": "MIT",
   "private": false,
+  "scripts": {
+    "start": "node --experimental-strip-types --env-file=.env src/main.ts"
+  },
   "dependencies": {
     "discord.js": "^14.26.3",
     "express": "^5.2.1"
