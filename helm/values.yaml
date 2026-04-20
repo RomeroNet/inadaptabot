@@ -1,4 +1,5 @@
 name: inadaptabot
+sha: hash
 
 replicaCount: 1
 

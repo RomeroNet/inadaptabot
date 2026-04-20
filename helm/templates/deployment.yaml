@@ -11,6 +11,7 @@ spec:
     metadata:
       labels:
         app: {{ .Values.name }}
+        sha: {{ .Values.sha }}
     spec:
       containers:
         - name: bot
