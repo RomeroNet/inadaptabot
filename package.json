@@ -10,7 +10,7 @@
   "scripts": {
     "start": "node --experimental-strip-types --env-file=.env src/main.ts",
     "build": "tsc",
-    "start-prod": "node --env-file=/app/.env dist/main.js",
+    "start-prod": "node dist/main.js",
     "push-commands": "node --experimental-strip-types --env-file=.env src/command/deploy.ts"
   },
   "dependencies": {

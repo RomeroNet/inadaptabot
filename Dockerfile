@@ -19,6 +19,4 @@ COPY --from=builder /app/dist /app/dist
 
 RUN yarn install --production
 
-COPY .env /app/.env
-
 CMD ["yarn", "start-prod"]
