@@ -1,12 +1,14 @@
 import { REST, Routes } from 'discord.js';
 import hora from './hora.js';
 
-const rest = new REST({ version: '10' }).setToken(process.env.TOKEN!);
-const commands = [hora.data.toJSON()];
+export async function pushToDiscord() {
+    const rest = new REST({ version: '10' }).setToken(process.env.TOKEN!);
+    const commands = [hora.data.toJSON()];
 
-await rest.put(
-    Routes.applicationCommands(process.env.CLIENT_ID!),
-    { body: commands }
-);
+    await rest.put(
+        Routes.applicationCommands(process.env.CLIENT_ID!),
+        { body: commands }
+    );
 
-console.log('Commands registered!');
+    console.log('Commands registered!');
+}

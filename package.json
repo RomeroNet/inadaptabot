@@ -8,7 +8,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "start": "node --experimental-strip-types --env-file=.env src/main.ts",
+    "start": "yarn build && node --env-file=.env dist/main.js",
     "build": "tsc",
     "start-prod": "node dist/main.js",
     "push-commands": "node --experimental-strip-types --env-file=.env src/command/deploy.ts"

@@ -1,8 +1,11 @@
 import { Client, Events, GatewayIntentBits } from "discord.js"
+import { pushToDiscord } from "./command/deploy.js";
 import { greetNewMember } from "./events/guildMemberAdd.js";
 import hora from "./command/hora.js";
 
 const token = process.env.TOKEN;
+
+pushToDiscord();
 
 const client = new Client({
     intents: [
