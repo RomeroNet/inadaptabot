@@ -15,7 +15,7 @@ spec:
       containers:
         - name: bot
           image: {{ .Values.image.repository }}:latest
-          imagePullPolicy: Always
+          ImagePullPolicy: Always
 
           env:
             - name: TOKEN
