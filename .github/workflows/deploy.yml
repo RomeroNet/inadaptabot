@@ -40,7 +40,7 @@ jobs:
                 file: Dockerfile
                 platforms: linux/arm64
                 push: true
-                tags: ${{ env.REGISTRY }}/${{ env.USER }}/${{ env.REPOSITORY }}:${{ github.sha }}
+                tags: ${{ env.REGISTRY }}/${{ env.USER }}/${{ env.REPOSITORY }}:latest
     
     deploy:
         runs-on: ubuntu-latest
@@ -63,7 +63,7 @@ jobs:
             - name: Deploy to Kubernetes using helm
               run: |
                 helm upgrade --install -n inadaptabot inadaptabot helm \
-                  --set sha=${{ github.sha }} \
-                  --set secrets.TOKEN=${{ secrets.TOKEN }} \
-                  --set secrets.CLIENT_ID=${{ secrets.CLIENT_ID }} \
-                  --set secrets.WELCOME_CHANNEL_ID=${{ secrets.WELCOME_CHANNEL_ID }}
+                  --set-string sha=${{ github.sha }} \
+                  --set-string secrets.TOKEN=${{ secrets.TOKEN }} \
+                  --set-string secrets.CLIENT_ID=${{ secrets.CLIENT_ID }} \
+                  --set-string secrets.WELCOME_CHANNEL_ID=${{ secrets.WELCOME_CHANNEL_ID }}
