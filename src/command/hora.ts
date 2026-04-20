@@ -1,5 +1,5 @@
 import { ChatInputCommandInteraction, SlashCommandBuilder } from "discord.js";
-import { getCountryTime } from "../service/DateService.ts";
+import { getCountryTime } from "../service/DateService.js";
 
 export default {
     data: new SlashCommandBuilder().setName('hora').setDescription('Muestra la hora de Mexico, Chile y España.'),

@@ -1,6 +1,6 @@
 import { Client, Events, GatewayIntentBits } from "discord.js"
-import { greetNewMember } from "./events/guildMemberAdd.ts";
-import hora from "./command/hora.ts";
+import { greetNewMember } from "./events/guildMemberAdd.js";
+import hora from "./command/hora.js";
 
 const token = process.env.TOKEN;
 

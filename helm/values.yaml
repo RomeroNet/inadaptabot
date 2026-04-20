@@ -1,0 +1,12 @@
+name: inadaptabot
+
+replicaCount: 1
+
+image:
+  repository: ghcr.io/romeronet/inadaptabot
+  replicas: 1
+
+secrets:
+  TOKEN: ""
+  CLIENT_ID: ""
+  WELCOME_CHANNEL_ID: ""

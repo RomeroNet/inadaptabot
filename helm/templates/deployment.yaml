@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.name }}
+spec:
+  replicas: {{ .Values.image.replicas }}
+  selector:
+    matchLabels:
+      app: {{ .Values.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.name }}
+    spec:
+      containers:
+        - name: bot
+          image: {{ .Values.image.repository }}:latest
+          imagePullPolicy: Always
+
+          env:
+            - name: TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.name }}
+                  key: TOKEN
+            - name: CLIENT_ID
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.name }}
+                  key: CLIENT_ID
+            - name: WELCOME_CHANNEL_ID
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.name }}
+                  key: WELCOME_CHANNEL_ID
+              
